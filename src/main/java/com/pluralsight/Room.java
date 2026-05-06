@@ -39,4 +39,24 @@ public class Room {
     public boolean isAvailable () {
         return !isDirty() && !isOccupied();
     }
+    // other methods
+    public void checkIn() {
+        if (isDirty()) {
+            System.out.println("We got to clean this mess! Come back later");
+        }
+        else if (isOccupied()) {
+            System.out.println("Shhh, someone is here.");
+        } else {
+            setOccupied(true);
+            setDirty(true);
+        }
+    }
+
+    public void checkOut(){
+       setOccupied(false);
+    }
+
+    public void cleanRoom() {
+        setDirty(false);
+    }
 }
